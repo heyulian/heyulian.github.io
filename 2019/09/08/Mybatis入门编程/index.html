@@ -7,13 +7,18 @@
 
     
 
-    <title></title>
+    <title>MyBatis，XML方式两种编程 | </title>
     <meta name="author" content="John Doe">
+    
+    <meta name="description" content="第一种方式：以增删改查学生信息表为例，属性有id，name，age，score
+第一步：建立学生表student，加入若干条记录
+第二步：在src-&amp;gt;main-&amp;gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象
+package studen">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="MyBatis，XML方式两种编程">
     <meta property="og:site_name" content="Hexo">
 
     
@@ -176,195 +181,497 @@
 
 
     <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper indigo">
+        <span class="breadcrumb">Current page(Categories)</span>
+        
+            
+
         
 
+        
+    </div>
+</nav>
 
-
-<div id="article-list" class="container main-container">
-    
-        <article class="simple-article">
+<article>
     <div class="card">
         <div class="card-content">
+            
+
             <div class="article-title">
                 
     
-        <h1 class="indigo-link-context"><a href="/2019/09/08/Mybatis入门编程/">MyBatis，XML方式两种编程</a></h1>
+        <h1>MyBatis，XML方式两种编程</h1>
     
 
 
             </div>
-
             <time class="pink-link-context" datetime="2019-09-08T13:54:42.891Z"><a href="/2019/09/08/Mybatis入门编程/">2019-09-08</a></time>
 
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
             
 
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
+            <div class="toc pink-link-context hide-on-med-and-down">
     
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>第一种方式：以增删改查学生信息表为例，属性有id，name，age，score</p>
+<p><strong><em>第一步：建立学生表student，加入若干条记录</em></strong></p>
+<p><strong><em>第二步：在src-&gt;main-&gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象</em></strong></p>
+<pre><code>package student;
+
+public class User {
+private Integer id;
+private String name;
+private Integer age;
+private Double score;
+
+public Integer getId() {
+return id;
+}
+
+public void setId(Integer id) {
+this.id = id;
+}
+
+public String getName() {
+return name;
+}
+
+public void setName(String name) {
+this.name = name;
+}
+
+public Integer getAge() {
+return age;
+}
+
+public void setAge(Integer age) {
+this.age = age;
+}
+
+public Double getScore() {
+return score;
+}
+
+public void setScore(Double score) {
+this.score = score;
+}
+
+@Override
+public String toString() {
+return &quot;User{&quot; +
+&quot;id=&quot; + id +
+&quot;, name=&apos;&quot; + name + &apos;\&apos;&apos; +
+&quot;, age=&quot; + age +
+&quot;, score=&quot; + score +
+&apos;}&apos;;
+}
+}</code></pre><p><strong><em>第三步：在idea中src，main目录下建立resources文件夹，右键选择Mark Directory as，选择Resources root，在该文件加下加入日志文件，进而在resources文件夹下创建主配置目录SqlConfigMapper.xml,代码如下</em></strong></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;!--&lt;transactionManager type=&quot;JDBC&quot; /&gt;
+    该标签用于指定事务管理器。type的取值有两个：
+    JDBC：使用JDBC事务管理器
+    MANAGED：使用第三方事务管理器，例如使用Spring的事务管理器
+
+    &lt;dataSource type=&quot;POOLED&quot;&gt;
+    该标签用于指定数据源类型。type的取值有三个：
+    POOLED：使用连接池技术（默认使用的是Mybatis内置连接池）
+    UNPOOLED：不使用连接池技术
+    JNDI：Java Naming-Directory Interface，Java命名与目录接口，这是一个容器。
+--&gt;
+
+&lt;!--主配置文件，连接到数据库--&gt;
+&lt;configuration&gt;
+&lt;!--配置环境--&gt;
+&lt;environments default=&quot;mysql&quot;&gt;
+&lt;!--配置mysql的环境，default取名无所谓，但指定之后id必须也为该指定--&gt;
+&lt;environment id=&quot;mysql&quot;&gt;
+&lt;!--配置事务的类型，当前事务为JDBC--&gt;
+&lt;transactionManager type=&quot;JDBC&quot;/&gt;
+&lt;!--配置数据源（即数据库连接池）--&gt;
+&lt;dataSource type=&quot;POOLED&quot;&gt;
+&lt;!--配置数据库相关的四个基本信息--&gt;
+&lt;property name=&quot;driver&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+&lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/test&quot;/&gt;
+&lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+&lt;property name=&quot;password&quot; value=&quot;1018&quot;/&gt;
+&lt;/dataSource&gt;
+&lt;/environment&gt;
+&lt;/environments&gt;
+
+
+&lt;!--指定映射配置文件的位置，映射配置文件位置为每个dao独立的配置文件
+针对IUserDao进行的配置--&gt;
+&lt;mappers&gt;
+&lt;mapper resource=&quot;student/UserMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+&lt;/configuration&gt;</code></pre><p><strong><em>第四步：在src-&gt;main-&gt;java下创建dao包，进而创建StudentInte接口，其中书写了增，删，改，查四个方法，代码如下：</em></strong></p>
+<pre><code>package dao;
+
+import student.User;
+
+import java.util.List;
+
+public interface StudentInte {
+List&lt;User&gt; findIdStudent(int id);
+List&lt;User&gt; findAll();
+void insertStudent(User user);
+void updateStudent(User user);
+void deleteStudent(int id);
+
+}</code></pre><p><strong><em>第五步：在resources文件夹下创建同名student包，在其中写入User类的映射文件UserMapper.xml，代码如下：</em></strong></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;!--配置User类的映射，放在resources文件夹下同名的student(便于查找)包内--&gt;
+&lt;mapper namespace=&quot;dao.StudentInte&quot;&gt;&lt;!--此处取相对路径--&gt;
+
+
+&lt;!--namespace:名称空间，一定不能为空，默认取本文件的相对位置
+parameterType：参数类型，取值为该SQL语句中传递的参数类型，如按id查询中，参数id
+为整型，则parameterType取值为Integer，删除语句同样如此
+插入语句，对象类型为User类对象，所以parameterType取值为student.User
+修改语句，对象类型为User类对象，所以parameterType取值为student.User
+删除语句，参数id为整型，则parameterType取值为Integer
+取该类相对位置
+resultType：返回类型
+按id查询结果为User类对象，所以resultType取值为student.User，查询所有同样如此
+因插入，修改，删除无返回对象，故不用设置
+取该类相对位置
+id：起唯一标识作用，使相应功能找到相应SQL语句--&gt;
+
+&lt;!--根据id查询某个学生的信息--&gt;
+&lt;select id=&quot;findIdStudent&quot; parameterType=&quot;Integer&quot;
+resultType=&quot;student.User&quot;&gt;
+select * from student where id = #{id}
+&lt;/select&gt;
+
+&lt;!--查询所有学生信息--&gt;
+&lt;select id=&quot;findAll&quot; resultType=&quot;student.User&quot;&gt;
+select * from student
+&lt;/select&gt;
+
+&lt;!--插入学生信息--&gt;
+&lt;insert id=&quot;insertStudent&quot; parameterType=&quot;student.User&quot;&gt;
+insert into student (name,age,score) value(#{name},#{age},#{score})
+&lt;/insert&gt;
+
+&lt;!--修改某个学生的信息--&gt;
+&lt;update id=&quot;updateStudent&quot; parameterType=&quot;student.User&quot;&gt;
+update student set name=#{name},age=#{age},score=#{score} where id = #{id}
+&lt;/update&gt;
+
+&lt;!--按id删除某个学生--&gt;
+&lt;delete id=&quot;deleteStudent&quot; parameterType=&quot;Integer&quot;&gt;
+delete from student where id = #{id}
+&lt;/delete&gt;
+
+
+&lt;/mapper&gt;</code></pre><p><strong><em>第六步：在test文件夹下，创建测试用的ibatis3包，创建测试类MyBatisTest，代码如下：</em></strong></p>
+<pre><code>package ibatis3;
+//功能：将一个学生信息写入到student
+//创建student表
+//表名：student
+//字段：id,name,age,score
+
+import dao.StudentInte;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import student.User;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+public class Student {
+public static void main(String[] args) {
+try {
+User student =new User();
+InputStream in = Resources.getResourceAsStream(&quot;SqlConfigMapper.xml&quot;);
+
+SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+
+SqlSessionFactory ssf = ssfb.build(in);
+
+SqlSession ss = ssf.openSession();
+
+StudentInte stu = ss.getMapper(StudentInte.class);
+//插入信息
+
+student.setName(&quot;哈哈&quot;);
+student.setAge(23);
+student.setScore(99.0);
+stu.insertStudent(student);
+
+//修改信息
+student.setId(3);
+student.setName(&quot;天天&quot;);
+student.setAge(55);
+student.setScore(45.4);
+stu.updateStudent(student);
+
+//删除信息
+stu.deleteStudent(2);
+
+//按id查询
+List&lt;User&gt; listId =stu.findIdStudent(1);
+System.out.println(listId);
+System.out.println(&quot;---------------&quot;);
+
+//查询所有
+List&lt;User&gt; list = stu.findAll();
+
+System.out.println(list);
+ss.commit();//完成之后一定提交事务，否则数据库可能会刷新不出来
+
+//关闭资源
+in.close();
+ss.close();
+
+} catch (IOException e) {
+e.printStackTrace();
+}
+
+}
+}</code></pre><p>附录：pom.xml</p>
+<pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+ xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com&lt;/groupId&gt;
+  &lt;artifactId&gt;MyBatis3&lt;/artifactId&gt;
+  &lt;packaging&gt;war&lt;/packaging&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;!-- TODO project name  --&gt;
+  &lt;name&gt;quickstart&lt;/name&gt;
+  &lt;description&gt;&lt;/description&gt;
+
+  &lt;!-- TODO
+  &lt;organization&gt;
+  &lt;name&gt;company name&lt;/name&gt;
+  &lt;url&gt;company url&lt;/url&gt;
+  &lt;/organization&gt;
+  --&gt;
+
+  &lt;licenses&gt;
+&lt;license&gt;
+  &lt;name&gt;The Apache Software License, Version 2.0&lt;/name&gt;
+  &lt;url&gt;http://www.apache.org/licenses/LICENSE-2.0.txt&lt;/url&gt;
+  &lt;distribution&gt;repo&lt;/distribution&gt;
+&lt;/license&gt;
+  &lt;/licenses&gt;
+
+  &lt;dependencies&gt;
+&lt;!--  WICKET DEPENDENCIES --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.wicket&lt;/groupId&gt;
+  &lt;artifactId&gt;wicket&lt;/artifactId&gt;
+  &lt;version&gt;${wicket.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- OPTIONAL
+&lt;dependency&gt;
+&lt;groupId&gt;org.apache.wicket&lt;/groupId&gt;
+&lt;artifactId&gt;wicket-extensions&lt;/artifactId&gt;
+&lt;version&gt;${wicket.version}&lt;/version&gt;
+&lt;/dependency&gt;
+--&gt;
+
+&lt;!-- LOGGING DEPENDENCIES - LOG4J 日志项目依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+  &lt;version&gt;1.4.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;log4j&lt;/groupId&gt;
+  &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+  &lt;version&gt;1.2.14&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!--  JUNIT DEPENDENCY FOR TESTING 单元测试依赖--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;junit&lt;/groupId&gt;
+  &lt;artifactId&gt;junit&lt;/artifactId&gt;
+  &lt;version&gt;3.8.2&lt;/version&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!--  JETTY DEPENDENCIES FOR TESTING  MyBatis依赖包--&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+  &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+  &lt;version&gt;3.4.5&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.ant&lt;/groupId&gt;
+  &lt;artifactId&gt;ant&lt;/artifactId&gt;
+  &lt;version&gt;1.9.6&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;asm&lt;/groupId&gt;
+  &lt;artifactId&gt;asm&lt;/artifactId&gt;
+  &lt;version&gt;3.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;cglib&lt;/groupId&gt;
+  &lt;artifactId&gt;cglib&lt;/artifactId&gt;
+  &lt;version&gt;3.2.5&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;commons-logging&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
+  &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.javassist&lt;/groupId&gt;
+  &lt;artifactId&gt;javassist&lt;/artifactId&gt;
+  &lt;version&gt;3.20.0-GA&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- MyBatis所需要的日志依赖包 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;log4j&lt;/groupId&gt;
+  &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+  &lt;version&gt;1.2.17&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+  &lt;version&gt;1.7.25&lt;/version&gt;
+  &lt;!--  &lt;scope&gt;test&lt;/scope&gt;--&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+  &lt;version&gt;1.7.25&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+  &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+  &lt;version&gt;2.3&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- mysql的依赖包 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;mysql&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+  &lt;version&gt;5.1.43&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!--  JETTY DEPENDENCIES FOR TESTING  --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
+  &lt;artifactId&gt;jetty&lt;/artifactId&gt;
+  &lt;version&gt;${jetty.version}&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
+  &lt;artifactId&gt;jetty-util&lt;/artifactId&gt;
+  &lt;version&gt;${jetty.version}&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
+  &lt;artifactId&gt;jetty-management&lt;/artifactId&gt;
+  &lt;version&gt;${jetty.version}&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;cn.edu.hfut.dmic.webcollector&lt;/groupId&gt;
+  &lt;artifactId&gt;WebCollector&lt;/artifactId&gt;
+  &lt;version&gt;2.71&lt;/version&gt;
+&lt;/dependency&gt;
+
+  &lt;/dependencies&gt;
+
+  &lt;build&gt;
+&lt;resources&gt;
+  &lt;resource&gt;
+&lt;filtering&gt;false&lt;/filtering&gt;
+&lt;directory&gt;src/main/resources&lt;/directory&gt;
+  &lt;/resource&gt;
+  &lt;resource&gt;
+&lt;filtering&gt;false&lt;/filtering&gt;
+&lt;directory&gt;src/main/java&lt;/directory&gt;
+&lt;includes&gt;
+  &lt;include&gt;**/*.xml&lt;/include&gt;
+  &lt;include&gt;**/*.properties&lt;/include&gt;
+&lt;/includes&gt;
+&lt;excludes&gt;
+  &lt;exclude&gt;**/*.java&lt;/exclude&gt;
+&lt;/excludes&gt;
+  &lt;/resource&gt;
+&lt;/resources&gt;
+&lt;testResources&gt;
+  &lt;testResource&gt;
+&lt;filtering&gt;false&lt;/filtering&gt;
+&lt;directory&gt;src/test/java&lt;/directory&gt;
+&lt;includes&gt;
+  &lt;include&gt;**&lt;/include&gt;
+&lt;/includes&gt;
+&lt;excludes&gt;
+  &lt;exclude&gt;**/*.java&lt;/exclude&gt;
+&lt;/excludes&gt;
+  &lt;/testResource&gt;
+&lt;/testResources&gt;
+&lt;plugins&gt;
+  &lt;plugin&gt;
+&lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
+&lt;artifactId&gt;maven-jetty-plugin&lt;/artifactId&gt;
+  &lt;/plugin&gt;
+&lt;/plugins&gt;
+  &lt;/build&gt;
+
+  &lt;properties&gt;
+&lt;wicket.version&gt;1.3.2&lt;/wicket.version&gt;
+&lt;jetty.version&gt;6.1.4&lt;/jetty.version&gt;
+  &lt;/properties&gt;
+
+&lt;/project&gt;</code></pre><blockquote>
+<p>ps：</p>
+<p>1，接口类StudentInte所创方法名必须与UserMapper.xml映射文件中增删改查的id一致，否则会报错。</p>
+<p>2，事务完成后注意提交且关闭资源文件</p>
+<p>3.注意及时配置约束文件</p>
+</blockquote>
+
                 
-    
-        <h1 class="indigo-link-context"><a href="/2019/08/13/新文档/">No title</a></h1>
-    
+
+
+<p class="pink-link-context">
+    <a href="/2019/08/13/新文档/" rel="next" title="">
+    Next: 
+  </a>
+</p>
 
 
             </div>
-
-            <time class="pink-link-context" datetime="2019-08-13T02:51:54.273Z"><a href="/2019/08/13/新文档/">2019-08-13</a></time>
-
-            
-
-
-            
+			
         </div>
-
-        
     </div>
 </article>
 
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2019/08/11/Spring框架/">No title</a></h1>
-    
 
 
-            </div>
-
-            <time class="pink-link-context" datetime="2019-08-11T01:34:54.581Z"><a href="/2019/08/11/Spring框架/">2019-08-11</a></time>
-
-            
 
 
-            
-                <div class="entry pink-link-context">
-                    <hr>
-<h1 id="title-Spring框架"><a href="#title-Spring框架" class="headerlink" title="title: Spring框架"></a>title: Spring框架</h1><hr>
-<pre><code>点击查看更多</code></pre>
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action pink-link-context">
-            <a href="/2019/08/11/Spring框架/">READ MORE</a>
-        </ div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2019/08/10/test/">No title</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2019-08-10T13:34:43.724Z"><a href="/2019/08/10/test/">2019-08-10</a></time>
-
-            
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2019/07/18/使用文档/">hexo搭建博客# 文章标题&lt;br&gt;</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2019-07-18T14:54:32.121Z"><a href="/2019/07/18/使用文档/">2019-07-18</a></time>
-
-            
-
-
-            
-                <div class="entry pink-link-context">
-                    <p>一、 hexo generate </p>
-<pre><code>加载文件数据</code></pre>
-                </div>
-            
-        </div>
-
-        
-        <div class="card-action pink-link-context">
-            <a href="/2019/07/18/使用文档/">READ MORE</a>
-        </ div>
-        
-    </div>
-</article>
-
-    
-        <article class="simple-article">
-    <div class="card">
-        <div class="card-content">
-            <div class="article-title">
-                
-    
-        <h1 class="indigo-link-context"><a href="/2019/07/18/hello-world/">Hello World</a></h1>
-    
-
-
-            </div>
-
-            <time class="pink-link-context" datetime="2019-07-18T14:30:34.080Z"><a href="/2019/07/18/hello-world/">2019-07-18</a></time>
-
-            
-
-
-            
-        </div>
-
-        
-    </div>
-</article>
-
-    
-
-    <ul class="pagination center-align">
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-left"></i></a>
-    </li>
-    
-    
-        <li class="active pink"><a href="/">1</a></li>
-    
-    
-    <li class="disabled">
-        <a href="/"><i class="fa fa-angle-right"></i></a>
-    </li>
- </ul>
 
 </div>
 
