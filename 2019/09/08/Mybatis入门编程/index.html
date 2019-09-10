@@ -10,10 +10,12 @@
     <title>MyBatis，XML方式两种编程 | </title>
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="##第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象
-###以增删改查学生信息表为例，属性有id，name，age，score（贺与练）
-###第一步：建立学生表student，加入若干条记录
-###第二步：在src-&amp;gt;main-&amp;gt;java下创建st">
+    <meta name="description" content="###第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）
+
+第一步：建立学生表student，加入若干条记录
+
+
+第二步：在src-&amp;gt;main-&amp;gt;java下创建student">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -222,10 +224,13 @@
 
 
             <div class="entry pink-link-context">
-                <p>##第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象</p>
-<p>###以增删改查学生信息表为例，属性有id，name，age，score（贺与练）</p>
-<p>###第一步：建立学生表student，加入若干条记录</p>
-<p>###第二步：在src-&gt;main-&gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象</p>
+                <p>###第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）</p>
+<blockquote>
+<p>第一步：建立学生表student，加入若干条记录</p>
+</blockquote>
+<blockquote>
+<p>第二步：在src-&gt;main-&gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象</p>
+</blockquote>
 <pre><code>package student;
 
 public class User {
@@ -275,7 +280,9 @@ return &quot;User{&quot; +
 &quot;, score=&quot; + score +
 &apos;}&apos;;
 }
-}</code></pre><p>###第三步：在idea中src，main目录下建立resources文件夹，右键选择Mark Directory as，选择Resources root，在该文件加下加入日志文件，进而在resources文件夹下创建主配置目录SqlConfigMapper.xml,代码如下：</p>
+}</code></pre><blockquote>
+<p>第三步：在idea中src，main目录下建立resources文件夹，右键选择Mark Directory as，选择Resources root，在该文件加下加入日志文件，进而在resources文件夹下创建主配置目录SqlConfigMapper.xml,代码如下：</p>
+</blockquote>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;!DOCTYPE configuration
 PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
@@ -317,7 +324,9 @@ PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
 &lt;mappers&gt;
 &lt;mapper resource=&quot;student/UserMapper.xml&quot;/&gt;
 &lt;/mappers&gt;
-&lt;/configuration&gt;</code></pre><p>###第四步：在src-&gt;main-&gt;java下创建dao包，进而创建StudentInte接口，其中书写了增，删，改，查四个方法，代码如下：</p>
+&lt;/configuration&gt;</code></pre><blockquote>
+<p>第四步：在src-&gt;main-&gt;java下创建dao包，进而创建StudentInte接口，其中书写了增，删，改，查四个方法，代码如下：</p>
+</blockquote>
 <pre><code>package dao;
 
 import student.User;
@@ -331,7 +340,9 @@ void insertStudent(User user);
 void updateStudent(User user);
 void deleteStudent(int id);
 
-}</code></pre><p>###第五步：在resources文件夹下创建同名student包，在其中写入User类的映射文件UserMapper.xml，代码如下：</p>
+}</code></pre><blockquote>
+<p>第五步：在resources文件夹下创建同名student包，在其中写入User类的映射文件UserMapper.xml，代码如下：</p>
+</blockquote>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;!DOCTYPE mapper
 PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
@@ -380,7 +391,9 @@ delete from student where id = #{id}
 &lt;/delete&gt;
 
 
-&lt;/mapper&gt;</code></pre><p>###第六步：在test文件夹下，创建测试用的ibatis3包，创建测试类MyBatisTest，代码如下：</p>
+&lt;/mapper&gt;</code></pre><blockquote>
+<p>第六步：在test文件夹下，创建测试用的ibatis3包，创建测试类MyBatisTest，代码如下：</p>
+</blockquote>
 <pre><code>package ibatis3;
 //功能：将一个学生信息写入到student
 //创建student表
