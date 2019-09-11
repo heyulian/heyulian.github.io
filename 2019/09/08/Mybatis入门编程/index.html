@@ -462,14 +462,206 @@ e.printStackTrace();
 }
 
 }
+}</code></pre><p>###第二种方式：不建立接口，直接使用xml开发方式，以用户表为例，属性有uname，usex，usex</p>
+<blockquote>
+<p>第一步：建立user2用户表</p>
+</blockquote>
+<blockquote>
+<p>第二步：在src目录下创建一个名为dao的包，在该包中创建持久化类MyUser，注意在类中声明的属性与数据表user2的字段一致</p>
+</blockquote>
+<pre><code>package dao;
+
+public class MyUser {
+private Integer uid;
+private String uname;
+private String usex;
+
+public Integer getUid() {
+return uid;
+}
+
+public void setUid(Integer uid) {
+this.uid = uid;
+}
+
+public String getUname() {
+return uname;
+}
+
+public void setUname(String uname) {
+this.uname = uname;
+}
+
+public String getUsex() {
+return usex;
+}
+
+public void setUsex(String usex) {
+this.usex = usex;
+}
+
+@Override
+public String toString() {
+return &quot;MyUser{&quot; +
+&quot;uid=&quot; + uid +
+&quot;, uname=&apos;&quot; + uname + &apos;\&apos;&apos; +
+&quot;, usex=&apos;&quot; + usex + &apos;\&apos;&apos; +
+&apos;}&apos;;
+}
+}</code></pre><blockquote>
+<p>第三步：在resources文件夹下创建同名dao包，在其中创建MyUser的映射类UserMapper.xml</p>
+</blockquote>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;dao/UserMapper.xml&quot;&gt;
+&lt;!--namespace指代本文件的位置--&gt;
+&lt;!--根据uid查询一个用户的信息--&gt;
+&lt;select id=&quot;selectUserById&quot; parameterType=&quot;Integer&quot;
+resultType=&quot;dao.MyUser&quot;&gt;
+select * from user2 where uid = #{uid}
+&lt;/select&gt;
+
+&lt;!--查询所有用户信息--&gt;
+&lt;select id=&quot;selectAllUser&quot; resultType=&quot;dao.MyUser&quot;&gt;
+select * from user2
+&lt;/select&gt;
+
+&lt;!--添加一个用户，#{uname}为dao.MyUser的属性值--&gt;
+&lt;insert id=&quot;addUser&quot; parameterType=&quot;dao.MyUser&quot;&gt;
+insert into user2 (uname,usex) value (#{uname},#{usex})
+&lt;/insert&gt;
+
+&lt;!--修改一个用户--&gt;
+&lt;update id=&quot;updateUser&quot; parameterType=&quot;dao.MyUser&quot;&gt;
+update user2 set uname = #{uname},usex = #{usex} where uid = #{uid}
+&lt;/update&gt;
+
+&lt;!--删除一个用户--&gt;
+&lt;delete id=&quot;deleteUser&quot; parameterType=&quot;Integer&quot;&gt;
+delete from user2 where uid = #{uid}
+&lt;/delete&gt;
+
+&lt;/mapper&gt;</code></pre><blockquote>
+<p>第四步：直接在resources文件夹下创建核心配置文件mybatis-config.xml,在该文件中配置数据库环境和映射文件的位置</p>
+</blockquote>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+
+&lt;!--MyBatis的主配置文件--&gt;
+&lt;configuration&gt;
+&lt;!--配置环境--&gt;
+&lt;environments default=&quot;mysql&quot;&gt;
+&lt;!--配置mysql的环境，default取名无所谓，但指定之后id必须也为该指定--&gt;
+&lt;environment id=&quot;mysql&quot;&gt;
+&lt;!--配置事务的类型，当前事务为JDBC--&gt;
+&lt;transactionManager type=&quot;JDBC&quot;/&gt;
+&lt;!--配置数据源（即数据库连接池）--&gt;
+&lt;dataSource type=&quot;POOLED&quot;&gt;
+&lt;!--配置数据库相关的四个基本信息--&gt;
+&lt;property name=&quot;driver&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+&lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost:3306/test&quot;/&gt;
+&lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+&lt;property name=&quot;password&quot; value=&quot;1018&quot;/&gt;
+&lt;/dataSource&gt;
+&lt;/environment&gt;
+&lt;/environments&gt;
+
+
+&lt;!--指定映射配置文件的位置，映射配置文件位置为每个dao独立的配置文件
+针对IUserDao进行的配置--&gt;
+&lt;mappers&gt;
+&lt;mapper resource=&quot;dao/UserMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+&lt;/configuration&gt;</code></pre><blockquote>
+<p>第五步：创建测试类MyBatisTest，在测试类中首先使用输入流读取配置文件，然后根据配置信息构建SqlSessionFactory对象。接下来通过SqlSessionFactory对象创建SQLSession对象，并使用SQLSession对象的方法进行数据库操作。</p>
+</blockquote>
+<pre><code>package mybatisTest;
+
+
+import dao.MyUser;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+public class Mybatis2_Test {
+public static void main(String[] args) {
+try {
+//读取配置文件mybatis-config.xml
+InputStream config = Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;);
+
+//根据配置文件构建SqlSessionFactory
+SqlSessionFactory ssf = new SqlSessionFactoryBuilder().build(config);
+
+//通过SqlSessionFactory创建SqlSession
+SqlSession ss = ssf.openSession();
+
+//SqlSession执行映射文件中的定义的SQL并返回映射
+//dao/UserMapper.xml.selectUserById为UserMapper.xml中的命名空间+select的id
+//查询一个用户
+MyUser mu = ss.selectOne(&quot;dao/UserMapper.xml.selectUserById&quot;, 1);
+System.out.println(mu);
+System.out.println(&quot;-----------------&quot;);
+
+//添加一个用户
+MyUser addmu = new MyUser();
+addmu.setUname(&quot;陈恒&quot;);
+addmu.setUsex(&quot;男&quot;);
+ss.insert(&quot;dao/UserMapper.xml.addUser&quot;, addmu);
+
+//修改一个用户
+MyUser updatemu = new MyUser();
+updatemu.setUid(1);
+updatemu.setUname(&quot;张三&quot;);
+updatemu.setUsex(&quot;女&quot;);
+ss.update(&quot;dao/UserMapper.xml.updateUser&quot;, updatemu);
+
+//删除一个用户
+ss.delete(&quot;dao/UserMapper.xml.deleteUser&quot;, 3);
+
+//查询所有用户
+List&lt;MyUser&gt; listMu = ss.selectList(&quot;dao/UserMapper.xml.selectAllUser&quot;);
+for (MyUser myUser:listMu){
+System.out.println(myUser);
+}
+
+//提交事务
+ss.commit();
+
+//关闭资源
+ss.close();
+config.close();
+} catch (IOException e) {
+e.printStackTrace();
+}
+}
+
 }</code></pre><blockquote>
 <p>ps：</p>
-<p>1，接口类StudentInte所创方法名必须与UserMapper.xml映射文件中增删改查的id一致，否则会报错。</p>
+<p>1，接口类StudentInte所创方法名必须与UserMapper.xml映射文件中增删改查的   id一致，否则会报错。</p>
 <p>2，事务完成后注意提交且关闭资源文件</p>
 <p>3.注意及时配置约束文件</p>
 </blockquote>
 <blockquote>
-<p>4.建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象</p>
+<p>4.建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象 </p>
+</blockquote>
+<blockquote>
+<p>5.没有接口时，需要在测试类中用到一系列的select（s，o），inserrt（s，o），<br>delete（s，o），update（s，o）方法，具体用法视情况而定，前者s指代的映射文件中的id，o指的是参数。</p>
+</blockquote>
+<blockquote>
+<p>6.namespace的用法：namespace不能为空，甚至可以用“xxx”进行代替，当有接口参与程序时，namespace指定为该接口的相对路径，id为该接口的指定方法名，起到了一一对应的作用，不至于吧众多接口方法搞混。当没有接口参与时，namespace为本映射文件的位置，s为“映射文件相对路径.id名”（ss.insert(“dao/UserMapper.xml.addUser”, addmu);），同样起到唯一标识的作用。</p>
+</blockquote>
+<blockquote>
+<p>7.开发MyBatis程序时，一般不写实现类，那样会使代码累赘</p>
 </blockquote>
 
                 
