@@ -5,11 +5,10 @@ const ap = new APlayer({
   lrcType: 0,
   audio: [
     {
-      name: "无尽光芒",
-      artist: '许巍',
-      url: 'http://www.ytmp3.cn/down/57563.mp3',
-      cover: 'https://s2.ax1x.com/2019/08/08/e7uwzn.png',
-      lrc: 'LRC/许巍-无尽光芒.lrc',
+      name: "夜、萤火虫和你",
+      artist: 'AniFace',
+      url: 'http://music.163.com/song/nedia/outer/url?id=509720124',
+      cover: 'http://p1.music.126.net/VM7ZmBeI1B1eZzh7_z73JA==/109951163036196252.jpg?param=130y130',
     },
     // {
     //   name: '第三极',
