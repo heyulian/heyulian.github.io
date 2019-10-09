@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="mybatis,">
+  <meta name="keywords" content="Hexo, NexT 哈林摇 Leafjame 北宸 Java 程序员 北漂 北京 旅行 摄像 Github Pages 教程 demo">
 
 
 
@@ -100,18 +100,17 @@
 
 
 
-<meta name="description" content="###第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）  第一步：建立学生表student，加入若干条记录   第二步：在src-&amp;gt;main-&amp;gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象">
-<meta name="keywords" content="mybatis">
+<meta name="description" content="Mybatis xml两种开发方式 第一种方式建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyBatis">
+<meta property="og:title" content="碧落">
 <meta property="og:url" content="http://yoursite.com/2019/09/08/Mybatis入门编程/index.html">
 <meta property="og:site_name" content="碧落">
-<meta property="og:description" content="###第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）  第一步：建立学生表student，加入若干条记录   第二步：在src-&amp;gt;main-&amp;gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象">
+<meta property="og:description" content="Mybatis xml两种开发方式 第一种方式建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-09T08:10:08.594Z">
+<meta property="og:updated_time" content="2019-10-09T08:18:53.285Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyBatis">
-<meta name="twitter:description" content="###第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）  第一步：建立学生表student，加入若干条记录   第二步：在src-&amp;gt;main-&amp;gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象">
+<meta name="twitter:title" content="碧落">
+<meta name="twitter:description" content="Mybatis xml两种开发方式 第一种方式建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）">
 
 
 
@@ -159,7 +158,7 @@
     })();
 </script>
 
-  <title>MyBatis | 碧落</title>
+  <title> | 碧落</title>
   
 
 
@@ -358,7 +357,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MyBatis</h2>
+          <h2 class="post-title" itemprop="name headline"></h2>
         
 
         <div class="post-meta">
@@ -375,7 +374,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-08T21:54:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-08T21:54:42+08:00">
                 2019-09-08
               </time>
             
@@ -385,28 +384,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/框架/" itemprop="url" rel="index">
-                    <span itemprop="name">框架</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -470,16 +447,17 @@
       
 
       
-        <p>###第一种方式：建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）</p>
+        <h1 id="Mybatis-xml两种开发方式"><a href="#Mybatis-xml两种开发方式" class="headerlink" title="Mybatis xml两种开发方式"></a>Mybatis xml两种开发方式</h1><hr>
+<h2 id="第一种方式"><a href="#第一种方式" class="headerlink" title="第一种方式"></a>第一种方式</h2><p>建立接口但是不建立实现类，使用SqlSession创建dao接口的代理对象,以增删改查学生信息表为例，属性有id，name，age，score（贺与练）</p>
+<a id="more"></a>
+
+
 <blockquote>
 <p>第一步：建立学生表student，加入若干条记录</p>
 </blockquote>
 <blockquote>
 <p>第二步：在src-&gt;main-&gt;java下创建student包，进而创建User类，对student表进行封装，使之成为一个对象</p>
 </blockquote>
-<a id="more"></a>
-
-
 <pre><code>package student;
 
 public class User {
@@ -565,15 +543,9 @@ PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
 &lt;property name=&quot;password&quot; value=&quot;1018&quot;/&gt;
 &lt;/dataSource&gt;
 &lt;/environment&gt;
-&lt;/environments&gt;
-
-
-&lt;!--指定映射配置文件的位置，映射配置文件位置为每个dao独立的配置文件
-针对IUserDao进行的配置--&gt;
-&lt;mappers&gt;
-&lt;mapper resource=&quot;student/UserMapper.xml&quot;/&gt;
-&lt;/mappers&gt;
-&lt;/configuration&gt;</code></pre><blockquote>
+&lt;/environments&gt;</code></pre><p>​<br>    <!--指定映射配置文件的位置，映射配置文件位置为每个dao独立的配置文件
+    针对IUserDao进行的配置--><br>    <mappers><br>    <mapper resource="student/UserMapper.xml"><br>    </mapper></mappers><br>    </p>
+<blockquote>
 <p>第四步：在src-&gt;main-&gt;java下创建dao包，进而创建StudentInte接口，其中书写了增，删，改，查四个方法，代码如下：</p>
 </blockquote>
 <pre><code>package dao;
@@ -597,23 +569,19 @@ void deleteStudent(int id);
 PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
 &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
 &lt;!--配置User类的映射，放在resources文件夹下同名的student(便于查找)包内--&gt;
-&lt;mapper namespace=&quot;dao.StudentInte&quot;&gt;&lt;!--此处取相对路径--&gt;
-
-
-&lt;!--namespace:名称空间，一定不能为空，默认取本文件的相对位置
-parameterType：参数类型，取值为该SQL语句中传递的参数类型，如按id查询中，参数id
-为整型，则parameterType取值为Integer，删除语句同样如此
-插入语句，对象类型为User类对象，所以parameterType取值为student.User
-修改语句，对象类型为User类对象，所以parameterType取值为student.User
-删除语句，参数id为整型，则parameterType取值为Integer
-取该类相对位置
-resultType：返回类型
-按id查询结果为User类对象，所以resultType取值为student.User，查询所有同样如此
-因插入，修改，删除无返回对象，故不用设置
-取该类相对位置
-id：起唯一标识作用，使相应功能找到相应SQL语句--&gt;
-
-&lt;!--根据id查询某个学生的信息--&gt;
+&lt;mapper namespace=&quot;dao.StudentInte&quot;&gt;&lt;!--此处取相对路径--&gt;</code></pre><p>​<br>    <!--namespace:名称空间，一定不能为空，默认取本文件的相对位置
+    parameterType：参数类型，取值为该SQL语句中传递的参数类型，如按id查询中，参数id
+    为整型，则parameterType取值为Integer，删除语句同样如此
+    插入语句，对象类型为User类对象，所以parameterType取值为student.User
+    修改语句，对象类型为User类对象，所以parameterType取值为student.User
+    删除语句，参数id为整型，则parameterType取值为Integer
+    取该类相对位置
+    resultType：返回类型
+    按id查询结果为User类对象，所以resultType取值为student.User，查询所有同样如此
+    因插入，修改，删除无返回对象，故不用设置
+    取该类相对位置
+    id：起唯一标识作用，使相应功能找到相应SQL语句--></p>
+<pre><code>&lt;!--根据id查询某个学生的信息--&gt;
 &lt;select id=&quot;findIdStudent&quot; parameterType=&quot;Integer&quot;
 resultType=&quot;student.User&quot;&gt;
 select * from student where id = #{id}
@@ -637,10 +605,8 @@ update student set name=#{name},age=#{age},score=#{score} where id = #{id}
 &lt;!--按id删除某个学生--&gt;
 &lt;delete id=&quot;deleteStudent&quot; parameterType=&quot;Integer&quot;&gt;
 delete from student where id = #{id}
-&lt;/delete&gt;
-
-
-&lt;/mapper&gt;</code></pre><blockquote>
+&lt;/delete&gt;</code></pre><p>​<br>    </p>
+<blockquote>
 <p>第六步：在test文件夹下，创建测试用的ibatis3包，创建测试类MyBatisTest，代码如下：</p>
 </blockquote>
 <pre><code>package ibatis3;
@@ -711,7 +677,7 @@ e.printStackTrace();
 }
 
 }
-}</code></pre><p>###第二种方式：不建立接口，直接使用xml开发方式，以用户表为例，属性有uname，usex，usex</p>
+}</code></pre><h2 id="第二种方式"><a href="#第二种方式" class="headerlink" title="第二种方式"></a>第二种方式</h2><p>不建立接口，直接使用xml开发方式，以用户表为例，属性有uname，usex，usex</p>
 <blockquote>
 <p>第一步：建立user2用户表</p>
 </blockquote>
@@ -817,32 +783,14 @@ PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
 &lt;property name=&quot;password&quot; value=&quot;1018&quot;/&gt;
 &lt;/dataSource&gt;
 &lt;/environment&gt;
-&lt;/environments&gt;
-
-
-&lt;!--指定映射配置文件的位置，映射配置文件位置为每个dao独立的配置文件
-针对IUserDao进行的配置--&gt;
-&lt;mappers&gt;
-&lt;mapper resource=&quot;dao/UserMapper.xml&quot;/&gt;
-&lt;/mappers&gt;
-&lt;/configuration&gt;</code></pre><blockquote>
+&lt;/environments&gt;</code></pre><p>​<br>    <!--指定映射配置文件的位置，映射配置文件位置为每个dao独立的配置文件
+    针对IUserDao进行的配置--><br>    <mappers><br>    <mapper resource="dao/UserMapper.xml"><br>    </mapper></mappers><br>    </p>
+<blockquote>
 <p>第五步：创建测试类MyBatisTest，在测试类中首先使用输入流读取配置文件，然后根据配置信息构建SqlSessionFactory对象。接下来通过SqlSessionFactory对象创建SQLSession对象，并使用SQLSession对象的方法进行数据库操作。</p>
 </blockquote>
-<pre><code>package mybatisTest;
-
-
-import dao.MyUser;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
-
-public class Mybatis2_Test {
+<pre><code>package mybatisTest;</code></pre><p>​<br>    import dao.MyUser;<br>    import org.apache.ibatis.io.Resources;<br>    import org.apache.ibatis.session.SqlSession;<br>    import org.apache.ibatis.session.SqlSessionFactory;<br>    import org.apache.ibatis.session.SqlSessionFactoryBuilder;</p>
+<p>​<br>    import java.io.IOException;<br>    import java.io.InputStream;<br>    import java.util.List;</p>
+<pre><code>public class Mybatis2_Test {
 public static void main(String[] args) {
 try {
 //读取配置文件mybatis-config.xml
@@ -979,7 +927,7 @@ e.printStackTrace();
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/09/08/Mybatis入门编程/" title="MyBatis">http://yoursite.com/2019/09/08/Mybatis入门编程/</a>
+    <a href="http://yoursite.com/2019/09/08/Mybatis入门编程/" title>http://yoursite.com/2019/09/08/Mybatis入门编程/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -991,12 +939,6 @@ e.printStackTrace();
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/mybatis/" rel="tag"> <i class="fa fa-tag"></i> mybatis</a>
-          
-        </div>
       
 
       
@@ -1112,8 +1054,17 @@ e.printStackTrace();
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1154,7 +1105,7 @@ e.printStackTrace();
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1233,7 +1184,7 @@ e.printStackTrace();
                     </li>
                   
                     <li>
-                      <a href="/2019/09/08/Mybatis入门编程/" title="MyBatis" target="_blank">MyBatis</a>
+                      <a href="/2019/09/08/Mybatis入门编程/" title target="_blank"></a>
                     </li>
                   
                     <li>
@@ -1281,6 +1232,22 @@ show_date_time();
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybatis-xml两种开发方式"><span class="nav-number">1.</span> <span class="nav-text">Mybatis xml两种开发方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种方式"><span class="nav-number">1.1.</span> <span class="nav-text">第一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种方式"><span class="nav-number">1.2.</span> <span class="nav-text">第二种方式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -1293,7 +1260,7 @@ show_date_time();
       <h3 class="widget-title">Tag Cloud</h3>
       <div id="myCanvasContainer" class="widget tagcloud">
           <canvas width="250" height="250" id="resCanvas" style="width=100%">
-              <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a><span class="tag-list-count">1</span></li></ul>
           </canvas>
       </div>
       </div>
