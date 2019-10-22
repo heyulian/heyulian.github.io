@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="Maven,">
+  <meta name="keywords" content="spring,">
 
 
 
@@ -100,23 +100,18 @@
 
 
 
-<meta name="description" content="第一章1.1 Maven简介Maven，来自于犹太语，意为知识的积累。现在美语口语中意为 “专家，内行”。  Apache Maven是一个使用纯Java编写的、开源的、跨平台的、标准化的、基于项目对象模（POM）的软件项目管理工具。可以通过简单的命令高度自动化地完成项目构建、依赖管理、报告生成等复杂的项目生命周期管理。 跨平台：跨OS平台、跨IDE平台。 标准化：项目构建标准化、项目结构标准化。">
-<meta name="keywords" content="Maven">
+<meta name="description" content="IoC-带参数的构造方法注入和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改">
+<meta name="keywords" content="spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven">
-<meta property="og:url" content="http://yoursite.com/2019/10/09/Maven-1/index.html">
+<meta property="og:title" content="IoC-带参数构造器注入">
+<meta property="og:url" content="http://yoursite.com/2019/10/22/IoC-带参数构造器注入-2/index.html">
 <meta property="og:site_name" content="碧落">
-<meta property="og:description" content="第一章1.1 Maven简介Maven，来自于犹太语，意为知识的积累。现在美语口语中意为 “专家，内行”。  Apache Maven是一个使用纯Java编写的、开源的、跨平台的、标准化的、基于项目对象模（POM）的软件项目管理工具。可以通过简单的命令高度自动化地完成项目构建、依赖管理、报告生成等复杂的项目生命周期管理。 跨平台：跨OS平台、跨IDE平台。 标准化：项目构建标准化、项目结构标准化。">
+<meta property="og:description" content="IoC-带参数的构造方法注入和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/Maven/1.png">
-<meta property="og:image" content="http://yoursite.com/images/Maven/2.png">
-<meta property="og:image" content="http://yoursite.com/images/Maven/3.png">
-<meta property="og:image" content="http://yoursite.com/images/Maven/4.png">
-<meta property="og:updated_time" content="2019-10-09T07:59:57.608Z">
+<meta property="og:updated_time" content="2019-10-22T09:14:31.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maven">
-<meta name="twitter:description" content="第一章1.1 Maven简介Maven，来自于犹太语，意为知识的积累。现在美语口语中意为 “专家，内行”。  Apache Maven是一个使用纯Java编写的、开源的、跨平台的、标准化的、基于项目对象模（POM）的软件项目管理工具。可以通过简单的命令高度自动化地完成项目构建、依赖管理、报告生成等复杂的项目生命周期管理。 跨平台：跨OS平台、跨IDE平台。 标准化：项目构建标准化、项目结构标准化。">
-<meta name="twitter:image" content="http://yoursite.com/images/Maven/1.png">
+<meta name="twitter:title" content="IoC-带参数构造器注入">
+<meta name="twitter:description" content="IoC-带参数的构造方法注入和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改">
 
 
 
@@ -146,7 +141,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/10/09/Maven-1/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/22/IoC-带参数构造器注入-2/">
 
 
 
@@ -164,7 +159,7 @@
     })();
 </script>
 
-  <title>Maven | 碧落</title>
+  <title>IoC-带参数构造器注入 | 碧落</title>
   
 
 
@@ -346,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/09/Maven-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/22/IoC-带参数构造器注入-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="十指紧口">
@@ -363,7 +358,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Maven</h2>
+          <h2 class="post-title" itemprop="name headline">IoC-带参数构造器注入</h2>
         
 
         <div class="post-meta">
@@ -380,8 +375,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T15:15:00+08:00">
-                2019-10-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-22T17:14:00+08:00">
+                2019-10-22
               </time>
             
 
@@ -403,8 +398,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Maven/" itemprop="url" rel="index">
-                    <span itemprop="name">Maven</span>
+                  <a href="/categories/框架/" itemprop="url" rel="index">
+                    <span itemprop="name">框架</span>
                   </a>
                 </span>
 
@@ -475,73 +470,39 @@
       
 
       
-        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-1-Maven简介"><a href="#1-1-Maven简介" class="headerlink" title="1.1 Maven简介"></a><strong>1.1 Maven简介</strong></h2><p>Maven，来自于犹太语，意为知识的积累。现在美语口语中意为 “专家，内行”。</p>
-<p> Apache Maven是一个使用纯Java编写的、开源的、跨平台的、标准化的、基于项目对象模（POM）的软件项目管理工具。可以通过简单的命令高度自动化地完成项目构建、依赖管理、报告生成等复杂的项目生命周期管理。</p>
-<p>跨平台：跨OS平台、跨IDE平台。</p>
-<p>标准化：项目构建标准化、项目结构标准化。</p>
-<p>用户画像</p>
-<a id="more"></a>
+        <h4 id="IoC-带参数的构造方法注入"><a href="#IoC-带参数的构造方法注入" class="headerlink" title="IoC-带参数的构造方法注入"></a>IoC-带参数的构造方法注入</h4><h5 id="和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改"><a href="#和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改" class="headerlink" title="和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改"></a>和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改</h5><a id="more"></a>
 
-<h2 id="1-2-Maven工作原理"><a href="#1-2-Maven工作原理" class="headerlink" title="1.2 Maven工作原理"></a><strong>1.2 Maven工作原理</strong></h2><p><img src="/images/Maven/1.png" alt></p>
-<h2 id="1-3-Maven的下载"><a href="#1-3-Maven的下载" class="headerlink" title="1.3 Maven的下载"></a><strong>1.3 Maven的下载</strong></h2><p>​    Apache Maven的官网为：<a href="https://maven.apache.org" target="_blank" rel="noopener">https://maven.apache.org</a> </p>
-<h2 id="1-4-Maven-的安装与配置"><a href="#1-4-Maven-的安装与配置" class="headerlink" title="1.4 Maven**的安装与配置**"></a><strong>1.4 Maven**</strong>的安装与配置**</h2><p><img src="/images/Maven/2.png" alt> </p>
-<p><img src="/images/Maven/3.png" alt></p>
-<h2 id="1-5-手工创建Maven项目"><a href="#1-5-手工创建Maven项目" class="headerlink" title="1.5 手工创建Maven项目"></a><strong>1.5 手工创建Maven项目</strong></h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a><strong>项目结构</strong></h3><p><img src="/images/Maven/4.png" alt> </p>
-<h3 id="扩展：包的命名"><a href="#扩展：包的命名" class="headerlink" title="扩展：包的命名"></a><strong>扩展：包的命名</strong></h3><p>​        一个项目中的包的名称一般可以分为四到五级：</p>
-<p>第一级：甲方公司域名的倒序，或开发方公司域名的倒序。为了保证项目在全球是唯一的。例如，cn.edu.aynu</p>
-<p>第二级：项目名称，为了保证项目在甲方公司中的唯一性。例如，cn.edu.aynu.sms。</p>
-<p>第三级：项目模块名称，为了保证在当前项目中资源的唯一性。</p>
-<p>​              例如，cn.edu.aynu.sms.aaa.bbb.ccc</p>
-<p>第四级：功能顶层包，为了区分各种资源的功能，</p>
-<p>​             例如，cn.edu.aynu.sms.aaa.bbb.ccc.service， cn.edu.aynu.sms.aaa.bbb.ccc.dao</p>
-<p>第五级：impl包，用于存放接口实现类，</p>
-<p>​           例如，cn.edu.aynu.sms.aaa.bbb.ccc.service.impl</p>
-<h3 id="Maven构建命令"><a href="#Maven构建命令" class="headerlink" title="Maven构建命令"></a><strong>Maven构建命令</strong></h3><p>1、mvn compile 编译,将Java 源程序编译成 class 字节码文件。</p>
-<p>2、mvn test 运行测试，并生成测试报告</p>
-<p>3、mvn clean 将以前编译得到的旧的 class 字节码文件删除，清理maven项目</p>
-<p>4、mvn pakage 打包,动态 web工程打 war包，Java工程打 jar 包。</p>
-<p>5、mvn install 将项目生成 jar 包放在仓库中，以便别的模块调用</p>
-<p>6、mvn clean package依次执行了clean、resources、compile、testResources、testCompile、test、jar(打包)等7个阶段。</p>
-<p>7、mvn clean install依次执行了clean、resources、compile、testResources、testCompile、test、jar(打包)、install等8个阶段。</p>
-<p>8、mvn clean deploy依次执行了clean、resources、compile、testResources、testCompile、test、jar(打包)、install、deploy等9个阶段。</p>
-<p>9、package命令完成了项目编译、单元测试、打包功能</p>
-<p>10、install命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库</p>
-<p>11、deploy命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库</p>
-<h2 id="1-6-Maven生命周期"><a href="#1-6-Maven生命周期" class="headerlink" title="1.6 Maven生命周期"></a><strong>1.6 Maven生命周期</strong></h2><h3 id="1-6-1-Maven生命周期与项目生命周期"><a href="#1-6-1-Maven生命周期与项目生命周期" class="headerlink" title="1.6.1 Maven生命周期与项目生命周期"></a><strong>1.6.1 Maven生命周期与项目生命周期</strong></h3><p>​    一个项目的构建过程需要经历被编译、被测试、被打包、被发布等生命阶段。这些项目生命阶段的构建是由谁完成的呢？是由Maven生命周期的各个阶段完成的。</p>
-<p>Maven只所以非常强大的一个重要的原因是，它拥有十分完善的生命周期模型(Lifecycle)。Maven的生命周期是对所有项目的构建过程进行的抽象和统一，包含了项目的清理、初始化、编译、测试、打包、集成测试、验证、部署和站点生成等几乎所有的构建步骤。所以，Maven的生命周期是用于管理项目生命周期的。</p>
-<p>Maven有三套相互独立的生命周期，分别是Clean、Default和Site，分别用于完成三类完全不同的任务。每个生命周期又包含多个生命阶段（Phase），这些生命阶段是有时间先后顺序的。即后面的阶段的执行，必定是执行过了前面的阶段。</p>
-<h3 id="1-6-2-Default生命周期"><a href="#1-6-2-Default生命周期" class="headerlink" title="1.6.2 Default生命周期"></a><strong>1.6.2 Default生命周期</strong></h3><p>Default生命周期是Maven最重要的生命周期，用于构建项目，其中定义了构建项目时所需要执行的所有阶段。下面列出了比较重要和常用的阶段。</p>
-<p>· validate</p>
-<p>· generate-sources</p>
-<p>· process-sources</p>
-<p>· generate-resources</p>
-<p>· process-resources   复制并处理资源文件，至目标目录，准备打包</p>
-<p><u>· compile   编译项目的源代码</u></p>
-<p>· process-classes</p>
-<p>· generate-test-sources</p>
-<p>· process-test-sources</p>
-<p>· generate-test-resources</p>
-<p>· process-test-resources   复制并处理资源文件，至目标测试目录</p>
-<p>· test-compile   编译测试源代码</p>
-<p>· process-test-classes</p>
-<p><u>· test   使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署</u></p>
-<p>· prepare-package</p>
-<p><u>· package   将编译好的代码打包成为可发布的格式，如 JAR，WAR</u></p>
-<p>· pre-integration-test</p>
-<p>· integration-test</p>
-<p>· post-integration-test</p>
-<p>· verify</p>
-<p><u>· install   将包安装至本地仓库，以让其它项目依赖</u></p>
-<p><u>deploy   将最终的包复制到远程的仓库，以让其它开发人员与项目共享</u></p>
-<h3 id="1-6-3-Clean生命周期"><a href="#1-6-3-Clean生命周期" class="headerlink" title="1.6.3 Clean生命周期"></a><strong>1.6.3 Clean生命周期</strong></h3><p>​    Clean生命周期用于清除之前指令执行结果 。其包含三个生命阶段。</p>
-<p> · pre-clean   执行一些需要在clean之前完成的工作</p>
-<p> <u>· clean   移除所有上一次构建生成的文件</u></p>
-<p> · post-clean   执行一些需要在clean之后立刻完成的工作 </p>
-<h3 id="1-6-4-Site生命周期"><a href="#1-6-4-Site生命周期" class="headerlink" title="1.6.4 Site生命周期"></a><strong>1.6.4 Site生命周期</strong></h3><p>​    Site生命周期用于建立和发布项目站点。其包含四个生命阶段。</p>
-<p> · pre-site   执行一些需要在生成站点文档之前完成的工作</p>
-<p> <u>· site   生成项目的站点文档</u></p>
-<p> · post-site   执行一些需要在生成站点文档之后完成的工作，并且为部署做准备</p>
-<p> <u>· site-deploy   将生成的站点文档部署到特定的服务器上</u></p>
+<p> 该注入方式下有三种属性设置，同样的，在xml头文件中需要加入c名称空间规范</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:c=<span class="string">"http://www.springframework.org/schema/c"</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><h5 id="直接使用constructor-arg-name属性进行注入"><a href="#直接使用constructor-arg-name属性进行注入" class="headerlink" title="直接使用constructor-arg name属性进行注入"></a>直接使用constructor-arg name属性进行注入</h5></li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"set"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"dao.ImplHello"</span>&gt;</span><br><span class="line">​    &lt;constructor-arg name=<span class="string">"id"</span> value=<span class="string">"1005"</span>/&gt;</span><br><span class="line">​    &lt;constructor-arg name=<span class="string">"name"</span> value=<span class="string">"张三"</span>/&gt;</span><br><span class="line">​    &lt;constructor-arg name=<span class="string">"school"</span> ref=<span class="string">"school"</span>/&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li><h5 id="使用constructor-arg-index属性进行注入，需要注意和实现类中属性定义的先后顺序一一对应，否则程序运行结果易出错，而且setter方式下没有改属性"><a href="#使用constructor-arg-index属性进行注入，需要注意和实现类中属性定义的先后顺序一一对应，否则程序运行结果易出错，而且setter方式下没有改属性" class="headerlink" title="使用constructor-arg index属性进行注入，需要注意和实现类中属性定义的先后顺序一一对应，否则程序运行结果易出错，而且setter方式下没有改属性"></a>使用constructor-arg index属性进行注入，需要注意和实现类中属性定义的先后顺序一一对应，否则程序运行结果易出错，而且setter方式下没有改属性</h5></li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> &lt;bean id=<span class="string">"set2"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"dao.ImplHello"</span>&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;constructor-arg index=<span class="string">"0"</span> value=<span class="string">"1005"</span>/&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;constructor-arg index=<span class="string">"1"</span> value=<span class="string">"张三"</span>/&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;constructor-arg index=<span class="string">"2"</span> ref=<span class="string">"school"</span>/&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li><h5 id="使用constructor-arg-直接进行注入，在这种注入方式中可以这样写，但在setter注入方式写报错"><a href="#使用constructor-arg-直接进行注入，在这种注入方式中可以这样写，但在setter注入方式写报错" class="headerlink" title="使用constructor-arg 直接进行注入，在这种注入方式中可以这样写，但在setter注入方式写报错"></a>使用constructor-arg 直接进行注入，在这种注入方式中可以这样写，但在setter注入方式写报错</h5></li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> &lt;bean id=<span class="string">"set3"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"dao.ImplHello"</span>&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;constructor-arg value=<span class="string">"1005"</span>/&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;constructor-arg value=<span class="string">"张三"</span>/&gt;</span><br><span class="line"></span><br><span class="line">​    &lt;constructor-arg ref=<span class="string">"school"</span>/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="4">
+<li><h5 id="使用c名称空间注入，和p名称空间相似"><a href="#使用c名称空间注入，和p名称空间相似" class="headerlink" title="使用c名称空间注入，和p名称空间相似"></a>使用c名称空间注入，和p名称空间相似</h5></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"set4"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"dao.ImplHello"</span> c:id=<span class="string">"1005"</span> c:name=<span class="string">"张三"</span> c:school-ref=<span class="string">"school"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"set5"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"dao.ImplHello"</span> c:_0=<span class="string">"1005"</span> c:_1=<span class="string">"张三"</span> c:_2-ref=<span class="string">"school"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -609,7 +570,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/10/09/Maven-1/" title="Maven">http://yoursite.com/2019/10/09/Maven-1/</a>
+    <a href="http://yoursite.com/2019/10/22/IoC-带参数构造器注入-2/" title="IoC-带参数构造器注入">http://yoursite.com/2019/10/22/IoC-带参数构造器注入-2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -624,7 +585,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Maven/" rel="tag"> <i class="fa fa-tag"></i> Maven</a>
+            <a href="/tags/spring/" rel="tag"> <i class="fa fa-tag"></i> spring</a>
           
         </div>
       
@@ -637,8 +598,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/11/Spring框架/" rel="next" title="spring入门">
-                <i class="fa fa-chevron-left"></i> spring入门
+              <a href="/2019/10/22/IoC-setter方式注入-1/" rel="next" title="IoC-setter方式注入">
+                <i class="fa fa-chevron-left"></i> IoC-setter方式注入
               </a>
             
           </div>
@@ -646,10 +607,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/09/Mybatis入门编程/" rel="prev" title="MyBatis入门编程">
-                MyBatis入门编程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -933,7 +890,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章"><span class="nav-number">1.</span> <span class="nav-text">第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Maven简介"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Maven简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Maven工作原理"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Maven工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Maven的下载"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Maven的下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Maven-的安装与配置"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Maven**的安装与配置**</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-手工创建Maven项目"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 手工创建Maven项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目结构"><span class="nav-number">1.5.1.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展：包的命名"><span class="nav-number">1.5.2.</span> <span class="nav-text">扩展：包的命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven构建命令"><span class="nav-number">1.5.3.</span> <span class="nav-text">Maven构建命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Maven生命周期"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 Maven生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-1-Maven生命周期与项目生命周期"><span class="nav-number">1.6.1.</span> <span class="nav-text">1.6.1 Maven生命周期与项目生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-2-Default生命周期"><span class="nav-number">1.6.2.</span> <span class="nav-text">1.6.2 Default生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-3-Clean生命周期"><span class="nav-number">1.6.3.</span> <span class="nav-text">1.6.3 Clean生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-4-Site生命周期"><span class="nav-number">1.6.4.</span> <span class="nav-text">1.6.4 Site生命周期</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#IoC-带参数的构造方法注入"><span class="nav-number">1.</span> <span class="nav-text">IoC-带参数的构造方法注入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改"><span class="nav-number">1.1.</span> <span class="nav-text">和使用setter注入大同小异，使用的仍旧是使用setter注入方式下的例子，但xml配置文件需要更改</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#直接使用constructor-arg-name属性进行注入"><span class="nav-number">1.2.</span> <span class="nav-text">直接使用constructor-arg name属性进行注入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用constructor-arg-index属性进行注入，需要注意和实现类中属性定义的先后顺序一一对应，否则程序运行结果易出错，而且setter方式下没有改属性"><span class="nav-number">1.3.</span> <span class="nav-text">使用constructor-arg index属性进行注入，需要注意和实现类中属性定义的先后顺序一一对应，否则程序运行结果易出错，而且setter方式下没有改属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用constructor-arg-直接进行注入，在这种注入方式中可以这样写，但在setter注入方式写报错"><span class="nav-number">1.4.</span> <span class="nav-text">使用constructor-arg 直接进行注入，在这种注入方式中可以这样写，但在setter注入方式写报错</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用c名称空间注入，和p名称空间相似"><span class="nav-number">1.5.</span> <span class="nav-text">使用c名称空间注入，和p名称空间相似</span></a></li></ol></li></ol></div>
             
 
           </div>
