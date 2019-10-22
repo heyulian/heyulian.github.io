@@ -100,17 +100,17 @@
 
 
 
-<meta name="description" content="IoC(控制反转)一：IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种1.依赖查找（DL）容器提供回调接口和上下文条件给组件。EJB和Apache Avalon 都使用这种方式。这样一来，组件就必须使用容器提供的API来查找资源和协作对象，仅有的控制反转只体现在那些回调方法上(也就是上面所说的 类型1):容器将调用这些回调方法，从而让应用代码获得相关资源。 2.依赖注入（DI）组件不">
+<meta name="description" content="IoC(控制反转)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SPring-IoC控制反转">
 <meta property="og:url" content="http://yoursite.com/2019/10/22/SPring-IoC控制反转/index.html">
 <meta property="og:site_name" content="碧落">
-<meta property="og:description" content="IoC(控制反转)一：IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种1.依赖查找（DL）容器提供回调接口和上下文条件给组件。EJB和Apache Avalon 都使用这种方式。这样一来，组件就必须使用容器提供的API来查找资源和协作对象，仅有的控制反转只体现在那些回调方法上(也就是上面所说的 类型1):容器将调用这些回调方法，从而让应用代码获得相关资源。 2.依赖注入（DI）组件不">
+<meta property="og:description" content="IoC(控制反转)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-22T06:04:50.772Z">
+<meta property="og:updated_time" content="2019-10-22T06:09:54.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SPring-IoC控制反转">
-<meta name="twitter:description" content="IoC(控制反转)一：IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种1.依赖查找（DL）容器提供回调接口和上下文条件给组件。EJB和Apache Avalon 都使用这种方式。这样一来，组件就必须使用容器提供的API来查找资源和协作对象，仅有的控制反转只体现在那些回调方法上(也就是上面所说的 类型1):容器将调用这些回调方法，从而让应用代码获得相关资源。 2.依赖注入（DI）组件不">
+<meta name="twitter:description" content="IoC(控制反转)">
 
 
 
@@ -447,7 +447,8 @@
       
 
       
-        <h1 id="IoC-控制反转"><a href="#IoC-控制反转" class="headerlink" title="IoC(控制反转)"></a>IoC(控制反转)</h1><h4 id="一：IoC是一个很大的概念-可以用不同的方式实现。其主要形式有两种"><a href="#一：IoC是一个很大的概念-可以用不同的方式实现。其主要形式有两种" class="headerlink" title="一：IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种"></a>一：IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种</h4><h5 id="1-依赖查找（DL）"><a href="#1-依赖查找（DL）" class="headerlink" title="1.依赖查找（DL）"></a>1.依赖查找（DL）</h5><p>容器提供回调接口和上下文条件给组件。EJB和Apache Avalon 都使用这种方式。这样一来，组件就必须使用容器提供的API来查找资源和协作对象，仅有的控制反转只体现在那些回调方法上(也就是上面所说的 类型1):容器将调用这些回调方法，从而让应用代码获得相关资源。</p>
+        <h1 id="IoC-控制反转"><a href="#IoC-控制反转" class="headerlink" title="IoC(控制反转)"></a>IoC(控制反转)</h1><a id="more"></a>
+<h4 id="一：IoC是一个很大的概念-可以用不同的方式实现。其主要形式有两种"><a href="#一：IoC是一个很大的概念-可以用不同的方式实现。其主要形式有两种" class="headerlink" title="一：IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种"></a>一：IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种</h4><h5 id="1-依赖查找（DL）"><a href="#1-依赖查找（DL）" class="headerlink" title="1.依赖查找（DL）"></a>1.依赖查找（DL）</h5><p>容器提供回调接口和上下文条件给组件。EJB和Apache Avalon 都使用这种方式。这样一来，组件就必须使用容器提供的API来查找资源和协作对象，仅有的控制反转只体现在那些回调方法上(也就是上面所说的 类型1):容器将调用这些回调方法，从而让应用代码获得相关资源。</p>
 <h5 id="2-依赖注入（DI）"><a href="#2-依赖注入（DI）" class="headerlink" title="2.依赖注入（DI）"></a>2.依赖注入（DI）</h5><p>组件不做定位查询，只提供普通的Java方法让容器去决定依赖关系。容器全权负责的组件的装配，它会把符合依赖关系的对象通过JavaBean属性或者构造函数传递给需要的对象。通过JavaBean属性注射依赖关系的做法称为设值方法注入(Setter Injection);将依赖关系作为构造函数参数传入的做法称为构造器注入(Constructor Injection)</p>
 <h4 id="二：IoC中最基本的Java技术就是”反射”编程"><a href="#二：IoC中最基本的Java技术就是”反射”编程" class="headerlink" title="二：IoC中最基本的Java技术就是”反射”编程"></a>二：IoC中最基本的Java技术就是”反射”编程</h4><p>反射又是一个生涩的名词，通俗的说反射就是根据给出的类名(字符串)来生成对象。这种编程方式可以让对象在生成时才决定要生成哪一种对象。反射的应用是很广泛的，像Hibernate、Spring中都是用”反射”做为最基本的技术手段。</p>
 <h4 id="三：IoC的理解"><a href="#三：IoC的理解" class="headerlink" title="三：IoC的理解"></a>三：IoC的理解</h4><p>可以把IoC模式看做是工厂模式的升华，把IoC看作是一个大工厂，只不过这个大工厂里要生成的对象都是在XML文件中给出定义的，然后利用Java 的”反射”编程，根据XML中给出的类名生成相应的对象。从实现来看，IoC是把以前在工厂方法里写死的对象生成代码，改变为由XML文件来定义，也就是把工厂和对象生成这两者独立分隔开来，目的就是提高灵活性和可维护性。当前比较知名的IoC容器有:Pico Container、Avalon 、Spring、JBoss、HiveMind、EJB等。</p>
