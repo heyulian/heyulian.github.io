@@ -2262,7 +2262,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #117420;
+  background: #d13e0b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3506,6 +3506,9 @@ header.post-header {
     text-align: justify;
   }
 }
+body {
+  background: url("/images/gray.jpg");
+}
 #days {
   display: block;
   color: #07b39b;
@@ -3514,8 +3517,6 @@ header.post-header {
   margin-bottom: 15px;
 }
 body {
-  background: url("https://source.unsplash.com/random/1600x900");
-  background: url("/images/desert2.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
