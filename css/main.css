@@ -2262,7 +2262,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d13e0b;
+  background: #a7d53b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3505,9 +3505,6 @@ header.post-header {
   .post-body {
     text-align: justify;
   }
-}
-body {
-  background: url("/images/gray.jpg");
 }
 #days {
   display: block;
