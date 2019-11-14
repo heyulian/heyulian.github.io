@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT 哈林摇 Leafjame 北宸 Java 程序员 北漂 北京 旅行 摄像 Github Pages 教程 demo">
+  <meta name="keywords" content="Spring-dao,">
 
 
 
@@ -100,19 +100,20 @@
 
 
 
-<meta name="description" content="MyBatis整合Spring（XML方式）MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的applic">
+<meta name="description" content="MyBatis整合Spring（XML方式）MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的appli">
+<meta name="keywords" content="Spring-dao">
 <meta property="og:type" content="article">
-<meta property="og:title" content="碧落">
+<meta property="og:title" content="MyBatis整合Spring（XML）">
 <meta property="og:url" content="http://yoursite.com/2019/11/14/MyBatis整合Spring(XML)/index.html">
 <meta property="og:site_name" content="碧落">
-<meta property="og:description" content="MyBatis整合Spring（XML方式）MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的applic">
+<meta property="og:description" content="MyBatis整合Spring（XML方式）MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的appli">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/14/MNuUHA.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/14/MNulh6.png">
-<meta property="og:updated_time" content="2019-11-14T10:01:58.871Z">
+<meta property="og:updated_time" content="2019-11-14T11:51:23.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="碧落">
-<meta name="twitter:description" content="MyBatis整合Spring（XML方式）MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的applic">
+<meta name="twitter:title" content="MyBatis整合Spring（XML）">
+<meta name="twitter:description" content="MyBatis整合Spring（XML方式）MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的appli">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/11/14/MNuUHA.png">
 
 
@@ -161,7 +162,7 @@
     })();
 </script>
 
-  <title> | 碧落</title>
+  <title>MyBatis整合Spring（XML） | 碧落</title>
   
 
 
@@ -363,7 +364,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline"></h2>
+          <h2 class="post-title" itemprop="name headline">MyBatis整合Spring（XML）</h2>
         
 
         <div class="post-meta">
@@ -380,7 +381,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T18:32:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T18:32:00+08:00">
                 2019-11-14
               </time>
             
@@ -390,6 +391,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -463,7 +486,8 @@
       
 
       
-        <h2 id="MyBatis整合Spring（XML方式）"><a href="#MyBatis整合Spring（XML方式）" class="headerlink" title="MyBatis整合Spring（XML方式）"></a>MyBatis整合Spring（XML方式）</h2><p>MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的applicationContext配置文件进行统一管理。</p>
+        <hr>
+<h2 id="MyBatis整合Spring（XML方式）"><a href="#MyBatis整合Spring（XML方式）" class="headerlink" title="MyBatis整合Spring（XML方式）"></a>MyBatis整合Spring（XML方式）</h2><p>MyBatis是优秀的dao层框架，Spring作为service层框架，并没有与MyBatis框架适合的jar包，但是，MyBatis却提供了MyBatis-Spring的jar包与spring进行整合，MyBatis主配置文件中不必再添加数据源配置，事务管理，数据源配置，SQLSessionFactory工厂的建立都移交给了Spring的applicationContext配置文件进行统一管理。</p>
 <a id="more"></a>
 
 <ol>
@@ -621,7 +645,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/11/14/MyBatis整合Spring(XML)/" title>http://yoursite.com/2019/11/14/MyBatis整合Spring(XML)/</a>
+    <a href="http://yoursite.com/2019/11/14/MyBatis整合Spring(XML)/" title="MyBatis整合Spring（XML）">http://yoursite.com/2019/11/14/MyBatis整合Spring(XML)/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -634,6 +658,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Spring-dao/" rel="tag"> <i class="fa fa-tag"></i> Spring-dao</a>
+          
+        </div>
+      
 
       
       
@@ -643,8 +673,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/14/Spring-整合web/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/11/14/Spring-整合web/" rel="next" title="Spring-整合web">
+                <i class="fa fa-chevron-left"></i> Spring-整合web
               </a>
             
           </div>
@@ -653,8 +683,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/14/MyBatis整合Spring(Anno)/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/14/Spring-事务管理(Anno)/" rel="prev" title="Spring-事务管理（Anno）">
+                Spring-事务管理（Anno） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -780,7 +810,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -791,7 +821,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -802,7 +832,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -877,23 +907,23 @@
                   
                   
                     <li>
-                      <a href="/2019/11/14/MyBatis整合Spring(Anno)/" title target="_blank"></a>
+                      <a href="/2019/11/14/IoC-setter方式注入/" title="Ioc-setter方式注入" target="_blank">Ioc-setter方式注入</a>
                     </li>
                   
                     <li>
-                      <a href="/2019/11/14/MyBatis整合Spring(XML)/" title target="_blank"></a>
+                      <a href="/2019/11/14/SPring-IoC控制反转/" title="Spring-IoC控制反转" target="_blank">Spring-IoC控制反转</a>
                     </li>
                   
                     <li>
-                      <a href="/2019/11/14/Spring-整合web/" title target="_blank"></a>
+                      <a href="/2019/11/14/MyBatis整合Spring(Anno)/" title="MyBatis整合Spring（Anno）" target="_blank">MyBatis整合Spring（Anno）</a>
                     </li>
                   
                     <li>
-                      <a href="/2019/11/14/Spring-事务管理(Anno)/" title target="_blank"></a>
+                      <a href="/2019/11/14/Spring-事务管理(Anno)/" title="Spring-事务管理（Anno）" target="_blank">Spring-事务管理（Anno）</a>
                     </li>
                   
                     <li>
-                      <a href="/2019/11/14/Spring-事务管理(XML)/" title target="_blank"></a>
+                      <a href="/2019/11/14/MyBatis整合Spring(XML)/" title="MyBatis整合Spring（XML）" target="_blank">MyBatis整合Spring（XML）</a>
                     </li>
                   
                 </ul>
@@ -954,6 +984,17 @@ show_date_time();
 
       <!-- 标签云 -->
       <!--
+      
+      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+      <div class="widget-wrap">
+      <h3 class="widget-title">Tag Cloud</h3>
+      <div id="myCanvasContainer" class="widget tagcloud">
+          <canvas width="250" height="250" id="resCanvas" style="width=100%">
+              <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP代理/">AOP代理</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP通知/">AOP通知</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC/">IoC</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-dao/">Spring-dao</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring入门/">Spring入门</a><span class="tag-list-count">1</span></li></ul>
+          </canvas>
+      </div>
+      </div>
       
       -->
       <!-- 标签云 -->

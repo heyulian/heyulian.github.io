@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="IoC,">
+  <meta name="keywords" content="Hexo, NexT 哈林摇 Leafjame 北宸 Java 程序员 北漂 北京 旅行 摄像 Github Pages 教程 demo">
 
 
 
@@ -100,21 +100,13 @@
 
 
 
-<meta name="description" content="案例程序 和setter注入方式大同小异，但实现类中属性的设值方式变为了构造器，构造器中可以是一个参数，也可以是多个参数，使用时要注意程序可能会报空指针异常，这个时候就要检查自己设置的属性是否都有参数。并采取适当的策略加以解决">
-<meta name="keywords" content="IoC">
-<meta property="og:type" content="article">
-<meta property="og:title" content="IoC-带参数构造器注入">
-<meta property="og:url" content="http://yoursite.com/2019/11/14/IoC-带参数构造器注入/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="碧落">
+<meta property="og:url" content="http://yoursite.com/tags/IoC/index.html">
 <meta property="og:site_name" content="碧落">
-<meta property="og:description" content="案例程序 和setter注入方式大同小异，但实现类中属性的设值方式变为了构造器，构造器中可以是一个参数，也可以是多个参数，使用时要注意程序可能会报空指针异常，这个时候就要检查自己设置的属性是否都有参数。并采取适当的策略加以解决">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/13/MJ2Won.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/11/13/MJWDKS.png">
-<meta property="og:updated_time" content="2019-11-14T11:35:08.272Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IoC-带参数构造器注入">
-<meta name="twitter:description" content="案例程序 和setter注入方式大同小异，但实现类中属性的设值方式变为了构造器，构造器中可以是一个参数，也可以是多个参数，使用时要注意程序可能会报空指针异常，这个时候就要检查自己设置的属性是否都有参数。并采取适当的策略加以解决">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/11/13/MJ2Won.png">
+<meta name="twitter:title" content="碧落">
 
 
 
@@ -144,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/11/14/IoC-带参数构造器注入/">
+  <link rel="canonical" href="http://yoursite.com/tags/IoC/">
 
 
 
@@ -162,7 +154,7 @@
     })();
 </script>
 
-  <title>IoC-带参数构造器注入 | 碧落</title>
+  <title>标签: IoC | 碧落</title>
   
 
 
@@ -181,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
 
@@ -333,356 +325,156 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>IoC<small>标签</small>
+        </h2>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/IoC-带参数构造器注入/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="十指紧口">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/1.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="碧落">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
+            <a class="post-title-link" href="/2019/11/14/IoC-setter方式注入/" itemprop="url">
+              
+                <span itemprop="name">Ioc-setter方式注入</span>
+              
+            </a>
         
-          <h2 class="post-title" itemprop="name headline">IoC-带参数构造器注入</h2>
-        
+      </h3>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-             
-
-             
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-14T18:30:00+08:00">
-                2019-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring框架/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring框架</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/11/14/IoC-带参数构造器注入/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/14/IoC-带参数构造器注入/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          <!--
-          
-          -->
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                   分钟
-                </span>
-              
-            </div>
-          
-
-          <!-- 隐藏文章内标题下，内容描述
-          
-          -->
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <hr>
-<h2 id="案例程序"><a href="#案例程序" class="headerlink" title="案例程序"></a>案例程序</h2><ol>
-<li><p>和setter注入方式大同小异，但实现类中属性的设值方式变为了构造器，构造器中可以是一个参数，也可以是多个参数，使用时要注意程序可能会报空指针异常，这个时候就要检查自己设置的属性是否都有参数。并采取适当的策略加以解决</p>
-<a id="more"></a>
-</li>
-<li><p>仍旧使用和setter注入方式一样的程序，只是HelloServiceImpl和applicationContext发生了变化，目录结构</p>
-<p><img src="https://s2.ax1x.com/2019/11/13/MJ2Won.png" alt="MJ2Won.png"></p>
-</li>
-</ol>
-<ol start="3">
-<li><p>HelloServiceImpl.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> beans.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServiceImpl</span> <span class="keyword">implements</span> <span class="title">HelloService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String school;</span><br><span class="line">    <span class="keyword">private</span> String middleschool;</span><br><span class="line">    <span class="keyword">private</span> User user;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HelloServiceImpl</span><span class="params">(String school, String middleschool, User user)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.school = school;</span><br><span class="line">        <span class="keyword">this</span>.middleschool = middleschool;</span><br><span class="line">        <span class="keyword">this</span>.user = user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我的名字:"</span>+user.getName()+<span class="string">",我的年龄:"</span>+user.getAge()+<span class="string">",我的学校:"</span>+school+<span class="string">",我的中学:"</span>+middleschool);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="4">
-<li><p>applicationContext.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:p</span>=<span class="string">"http://www.springframework.org/schema/p"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:c</span>=<span class="string">"http://www.springframework.org/schema/c"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">       http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--ref对象引入,name,value均有值--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;bean id="userId" class="beans.User"&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="name" value="小红"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="age" value="19"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    &lt;bean id="serviceId" class="service.HelloServiceImpl"&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg name="school" value="aynu"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg name="user" ref="userId"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg name="middleschool" value="安阳一中"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--ref对象引入,无name，有value值，但要注意属性位置和实现类中属性的位置保持一致</span></span><br><span class="line"><span class="comment">        否则，属性设置值会错误，极少用--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;bean id="userId" class="beans.User"&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="name" value="小红"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="age" value="19"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    &lt;bean id="serviceId" class="service.HelloServiceImpl"&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg value="aynu"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg value="安阳一中"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg ref="userId"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--ref对象引入,使用index索引，但要注意属性位置和实现类中属性的位置保持一致</span></span><br><span class="line"><span class="comment">        否则，属性设置值会错误，这种方式极少用--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;bean id="userId" class="beans.User"&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="name" value="小红"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="age" value="19"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    &lt;bean id="serviceId" class="service.HelloServiceImpl"&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg index="0" value="aynu"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg index="1" value="安阳一中"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg index="2" ref="userId"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--C名称空间注入--&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- &lt;bean id="userId" class="beans.User"&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="name" value="小红"/&gt;</span></span><br><span class="line"><span class="comment">        &lt;property name="age" value="19"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    &lt;bean id="serviceId" class="service.HelloServiceImpl" c:_0="aynu" c:user-ref="userId"&gt;</span></span><br><span class="line"><span class="comment">        &lt;constructor-arg name="middleschool" value="安阳一中"/&gt;</span></span><br><span class="line"><span class="comment">    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--autowire="constructor"自动注入--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userId"</span> <span class="attr">class</span>=<span class="string">"beans.User"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"小红"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">value</span>=<span class="string">"19"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"serviceId"</span> <span class="attr">class</span>=<span class="string">"service.HelloServiceImpl"</span> <span class="attr">c:middleschool</span>=<span class="string">"安阳一中"</span> <span class="attr">autowire</span>=<span class="string">"constructor"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"school"</span> <span class="attr">value</span>=<span class="string">"aynu"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--测试类中通过工厂中的getBean("serviceId")找到这里</span></span><br><span class="line"><span class="comment">        c：c名称空间注入，相当于简化了constructor-arg，但要加入约束语句</span></span><br><span class="line"><span class="comment">           xmlns:c="http://www.springframework.org/schema/c"</span></span><br><span class="line"><span class="comment">           否则c命令无效，而且只能在&lt;bean id="" class="" c:_0="aynu" c:user-ref="userId"&gt;中使用</span></span><br><span class="line"><span class="comment">        constructor-arg：带参数构造器构造方式专有标签</span></span><br><span class="line"><span class="comment">        autowire="constructor" 通过HelloServiceImpl中构造函数的参数(String school, String middleschool, User user)</span></span><br><span class="line"><span class="comment">                  来查找xml中是否有类型为User的bean，并与之匹配连接注入</span></span><br><span class="line"><span class="comment">            autowire自动注入，在xml方式中使用不多，经常在注解中使用，样式：@Autowire--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="5">
-<li><p>运行结果</p>
-<p><img src="https://s2.ax1x.com/2019/11/13/MJWDKS.png" alt="MJWDKS.png"></p>
-</li>
-</ol>
-
-      
-    </div>
-    
-    
-    
-
-    <div>
-          
-            
-
-          
-    </div>
-
-    
-
-    <div>
-      
-        <div>
-    
-        <div style="text-align:center;color: #ea103d91;font-size:20px;">-------------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------------</div>
-    
-</div>
-
-      
-    </div>
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/avatar.gif" alt="十指紧口 微信支付">
-        <p>微信支付</p>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-11-14T19:13:00+08:00" content="2019-11-14">
+          11-14
+        </time>
       </div>
-    
 
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/avatar.gif" alt="十指紧口 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    十指紧口
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/11/14/IoC-带参数构造器注入/" title="IoC-带参数构造器注入">http://yoursite.com/2019/11/14/IoC-带参数构造器注入/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/IoC/" rel="tag"> <i class="fa fa-tag"></i> IoC</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/11/14/Spring入门/" rel="next" title="Spring入门">
-                <i class="fa fa-chevron-left"></i> Spring入门
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/14/IoC-Spring表达式设值/" rel="prev" title="IoC-Spring表达式设值">
-                IoC-Spring表达式设值 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
         
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
 
-<script>
-//  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2019/11/14/SPring-IoC控制反转/" itemprop="url">
+              
+                <span itemprop="name">Spring-IoC控制反转</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-11-14T19:12:00+08:00" content="2019-11-14">
+          11-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2019/11/14/IoC-带参数构造器注入/" itemprop="url">
+              
+                <span itemprop="name">IoC-带参数构造器注入</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-11-14T18:30:00+08:00" content="2019-11-14">
+          11-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2019/11/14/IoC-Spring表达式设值/" itemprop="url">
+              
+                <span itemprop="name">IoC-Spring表达式设值</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-11-14T18:30:00+08:00" content="2019-11-14">
+          11-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2019/11/14/Ioc-Spring复杂类型设值/" itemprop="url">
+              
+                <span itemprop="name">IoC-复杂类型设值</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-11-14T18:30:00+08:00" content="2019-11-14">
+          11-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -690,13 +482,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-  
-
-
 
         </div>
         
@@ -719,17 +504,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -900,22 +676,6 @@ show_date_time();
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#案例程序"><span class="nav-number">1.</span> <span class="nav-text">案例程序</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -1115,10 +875,6 @@ show_date_time();
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
