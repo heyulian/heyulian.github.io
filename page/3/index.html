@@ -340,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/Ioc-Spring复杂类型设值/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/IoC-带参数构造器注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="十指紧口">
@@ -359,7 +359,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/14/Ioc-Spring复杂类型设值/" itemprop="url">IoC-复杂类型设值</a></h2>
+                <a class="post-title-link" href="/2019/11/14/IoC-带参数构造器注入/" itemprop="url">IoC-带参数构造器注入</a></h2>
         
 
         <div class="post-meta">
@@ -417,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/14/Ioc-Spring复杂类型设值/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/14/Ioc-Spring复杂类型设值/" itemprop="commentCount"></span>
+                <a href="/2019/11/14/IoC-带参数构造器注入/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/14/IoC-带参数构造器注入/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -484,10 +484,10 @@
         
           <hr>
 <h2 id="案例程序"><a href="#案例程序" class="headerlink" title="案例程序"></a>案例程序</h2><ol>
-<li><p>复杂类型属性的注入，该属性可能是List，Set，Map，Arr，property类型的，针对这种属性类型，Spring提供一些列的关键字用于设置，List集合用“list”封装，Set集合用“set”封装，数组用“array”封装，Map集合用“map”封装，property用“ props”封装，每一个标签下都有一个对应的“ value”标签，用于设置值。</p></li></ol>
+<li><p>和setter注入方式大同小异，但实现类中属性的设值方式变为了构造器，构造器中可以是一个参数，也可以是多个参数，使用时要注意程序可能会报空指针异常，这个时候就要检查自己设置的属性是否都有参数。并采取适当的策略加以解决</p></li></ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/11/14/Ioc-Spring复杂类型设值/" rel="contents">
+            <a class="btn" href="/2019/11/14/IoC-带参数构造器注入/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1022,7 +1022,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1033,7 +1033,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1108,7 +1108,7 @@
                   
                   
                     <li>
-                      <a href="/2019/11/14/SpringMVC入门/" title target="_blank"></a>
+                      <a href="/2019/11/14/SpringMVC入门/" title="SpringMVC入门" target="_blank">SpringMVC入门</a>
                     </li>
                   
                     <li>
@@ -1176,7 +1176,7 @@ show_date_time();
       <h3 class="widget-title">Tag Cloud</h3>
       <div id="myCanvasContainer" class="widget tagcloud">
           <canvas width="250" height="250" id="resCanvas" style="width=100%">
-              <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP代理/">AOP代理</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP通知/">AOP通知</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC/">IoC</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-dao/">Spring-dao</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring入门/">Spring入门</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP代理/">AOP代理</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP通知/">AOP通知</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC/">IoC</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-dao/">Spring-dao</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/">SpringMVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring入门/">Spring入门</a><span class="tag-list-count">1</span></li></ul>
           </canvas>
       </div>
       </div>
