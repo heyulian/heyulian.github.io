@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT 哈林摇 Leafjame 北宸 Java 程序员 北漂 北京 旅行 摄像 Github Pages 教程 demo">
+  <meta name="keywords" content="MVC_Json,">
 
 
 
@@ -101,16 +101,17 @@
 
 
 <meta name="description" content="SpringMVCJson数据交互">
+<meta name="keywords" content="MVC_Json">
 <meta property="og:type" content="article">
-<meta property="og:title" content="碧落">
+<meta property="og:title" content="SpringMVC_Json">
 <meta property="og:url" content="http://yoursite.com/2019/11/23/SpringMVCJson数据交互/index.html">
 <meta property="og:site_name" content="碧落">
 <meta property="og:description" content="SpringMVCJson数据交互">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/11/23/Mbofzj.png">
-<meta property="og:updated_time" content="2019-11-23T09:52:10.397Z">
+<meta property="og:updated_time" content="2019-11-23T10:34:25.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="碧落">
+<meta name="twitter:title" content="SpringMVC_Json">
 <meta name="twitter:description" content="SpringMVCJson数据交互">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/11/23/Mbofzj.png">
 
@@ -160,7 +161,7 @@
     })();
 </script>
 
-  <title> | 碧落</title>
+  <title>SpringMVC_Json | 碧落</title>
   
 
 
@@ -362,7 +363,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline"></h2>
+          <h2 class="post-title" itemprop="name headline">SpringMVC_Json</h2>
         
 
         <div class="post-meta">
@@ -379,7 +380,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-23T18:26:32+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-23T18:26:00+08:00">
                 2019-11-23
               </time>
             
@@ -389,6 +390,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SpringMVC/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringMVC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -462,7 +485,8 @@
       
 
       
-        <h2 id="SpringMVCJson数据交互"><a href="#SpringMVCJson数据交互" class="headerlink" title="SpringMVCJson数据交互"></a>SpringMVCJson数据交互</h2><a id="more"></a>
+        <hr>
+<h2 id="SpringMVCJson数据交互"><a href="#SpringMVCJson数据交互" class="headerlink" title="SpringMVCJson数据交互"></a>SpringMVCJson数据交互</h2><a id="more"></a>
 
 <h3 id="1-项目结构"><a href="#1-项目结构" class="headerlink" title="1.项目结构"></a>1.项目结构</h3><p><img src="https://s2.ax1x.com/2019/11/23/Mbofzj.png" alt="Mbofzj.png"></p>
 <h3 id="2-User-java"><a href="#2-User-java" class="headerlink" title="2.User.java"></a>2.User.java</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> beans;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", password='"</span> + password + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -551,7 +575,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/11/23/SpringMVCJson数据交互/" title>http://yoursite.com/2019/11/23/SpringMVCJson数据交互/</a>
+    <a href="http://yoursite.com/2019/11/23/SpringMVCJson数据交互/" title="SpringMVC_Json">http://yoursite.com/2019/11/23/SpringMVCJson数据交互/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -564,6 +588,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/MVC-Json/" rel="tag"> <i class="fa fa-tag"></i> MVC_Json</a>
+          
+        </div>
+      
 
       
       
@@ -573,8 +603,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/23/SpringMVC请求转发和重定向/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/11/16/Git的建立与基础使用/" rel="next" title="Git入门">
+                <i class="fa fa-chevron-left"></i> Git入门
               </a>
             
           </div>
@@ -583,8 +613,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/23/SpringMVC三种异常处理方式/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/11/23/SpringMVC三种异常处理方式/" rel="prev" title="SpringMVC异常处理">
+                SpringMVC异常处理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -732,7 +762,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -807,19 +837,19 @@
                   
                   
                     <li>
-                      <a href="/2019/11/23/SpringMVC三种异常处理方式/" title target="_blank"></a>
+                      <a href="/2019/11/23/SpringMVC接收前端传来的请求参数/" title="SpringMVC参数接收" target="_blank">SpringMVC参数接收</a>
                     </li>
                   
                     <li>
-                      <a href="/2019/11/23/SpringMVCJson数据交互/" title target="_blank"></a>
+                      <a href="/2019/11/23/SpringMVC请求转发和重定向/" title="SpringMVC转发" target="_blank">SpringMVC转发</a>
                     </li>
                   
                     <li>
-                      <a href="/2019/11/23/SpringMVC请求转发和重定向/" title target="_blank"></a>
+                      <a href="/2019/11/23/SpringMVC三种异常处理方式/" title="SpringMVC异常处理" target="_blank">SpringMVC异常处理</a>
                     </li>
                   
                     <li>
-                      <a href="/2019/11/23/SpringMVC接收前端传来的请求参数/" title target="_blank"></a>
+                      <a href="/2019/11/23/SpringMVCJson数据交互/" title="SpringMVC_Json" target="_blank">SpringMVC_Json</a>
                     </li>
                   
                     <li>
@@ -891,7 +921,7 @@ show_date_time();
       <h3 class="widget-title">Tag Cloud</h3>
       <div id="myCanvasContainer" class="widget tagcloud">
           <canvas width="250" height="250" id="resCanvas" style="width=100%">
-              <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP代理/">AOP代理</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP通知/">AOP通知</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC/">IoC</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-dao/">Spring-dao</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/">SpringMVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring入门/">Spring入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li></ul>
+              <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/">AOP</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP代理/">AOP代理</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP通知/">AOP通知</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC/">IoC</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC-Json/">MVC_Json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC参数/">MVC参数</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC异常/">MVC异常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC转发/">MVC转发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-dao/">Spring-dao</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/">SpringMVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring入门/">Spring入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li></ul>
           </canvas>
       </div>
       </div>
